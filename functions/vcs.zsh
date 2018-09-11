@@ -65,14 +65,6 @@ function +vi-git-remotebranch() {
        esac
      fi
     fi
-
-    hook_com[branch]="$(print_icon 'VCS_BRANCH_ICON')${hook_com[branch]}"
-    # Always show the remote
-    #if [[ -n ${remote} ]] ; then
-    # Only show the remote if it differs from the local
-    if [[ -n ${remote} ]] && [[ "${remote#*/}" != "${branch_name}" ]] ; then
-        hook_com[branch]+="$(print_icon 'VCS_REMOTE_BRANCH_ICON')${remote// /}"
-    fi
 }
 
 set_default POWERLEVEL9K_VCS_HIDE_TAGS false
